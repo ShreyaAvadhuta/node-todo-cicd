@@ -1,92 +1,43 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
+
+<head>
     <title>My Node.js todolist</title>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <style>
-      body {
-        font-family: 'Open Sans', sans-serif;
-        background-color: #f7f7f7;
-        color: #333333;
-        line-height: 1.6;
-        padding: 2rem;
-      }
+        body {
+            background: linear-gradient(to bottom, yellow 50%, lightblue 50%);
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
 
-      h1 {
-        font-size: 2.5rem;
-        margin-top: 0;
-        margin-bottom: 2rem;
-        text-align: center;
-        color: #0077cc;
-      }
-
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      li {
-        margin-bottom: 1rem;
-        background-color: #ffffff;
-        padding: 1rem;
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
-      }
-
-      a {
-        text-decoration: none;
-        color: #0077cc;
-        margin-right: 1rem;
-        font-size: 1.2rem;
-      }
-
-      form {
-        margin-top: 2rem;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-size: 1.2rem;
-      }
-
-      input[type="text"] {
-        padding: 0.5rem;
-        font-size: 1.2rem;
-        border-radius: 4px;
-        border: 1px solid #cccccc;
-        width: 100%;
-        margin-bottom: 1rem;
-      }
-
-      input[type="submit"] {
-        padding: 0.5rem 1rem;
-        font-size: 1.2rem;
-        background-color: #0077cc;
-        color: #ffffff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
     </style>
-  </head>
-  <body>
-    <h1>DevOps To-do-list</h1>
+</head>
+
+<body>
+    <h1>This is Shreya's and Vanshita's DevOps To-do-list </h1>
     <ul>
-      <% todolist.forEach(function(todo, index) { %>
-      <li>
-        <a href="/todo/delete/<%= index %>">✘</a>
-        <a href="/todo/<%= index %>">✎</a>
-        <span><%- todo %></span>
-      </li>
-      <% }); %>
+        <% todolist.forEach(function(todo, index) { %>
+        <li>
+            <a href="/todo/delete/<%= index %>">✘</a>
+            <a href="/todo/<%= index %>">✎</a>
+            <%- todo %>
+        </li>
+        <% }); %>
     </ul>
 
     <form action="/todo/add/" method="post">
-      <label for="newtodo">What should I do?</label>
-      <input type="text" name="newtodo" id="newtodo" autofocus />
-      <input type="submit" value="Add" />
+        <p>
+            <label for="newtodo">What shoud I do?</label>
+            <input type="text" name="newtodo" id="newtodo" autofocus />
+            <input type="submit" value="Add" />
+        </p>
     </form>
-  </body>
+</body>
+
 </html>
+
 
